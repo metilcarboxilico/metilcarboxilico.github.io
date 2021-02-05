@@ -1,0 +1,103 @@
+
+
+
+
+<!--
+Consignas de los juegos
+
+Juego: tres niveles de preguntas
+
+Objetivo del juego
+Superar tres niveles respondiendo correctamente preguntas sobre la serie.
+
+Funcionamiento del juego
+El juego consta de tres niveles. Cada nivel tiene 6 preguntas. 
+Las preguntas pueden ser para responder con una palabra, para elegir verdadero o falso, o para elegir entre varias opciones predeterminadas.
+Cada nivel tiene un número máximo de errores permitidos para pasar al siguiente nivel. Si supera la cantidad de errores permitidos, el jugador pierde y no puede seguir jugando.
+En el nivel 1 se pueden cometer tres errores. O sea, alcanza con responder 3 preguntas correctamente para pasar al nivel 2.
+En el nivel 2 se pueden cometer dos errores. O sea, hay que responder al menos 4 preguntas correctamente para pasar al nivel 3. 
+En el nivel 3 se puede cometer un único error. O sea, para ganar el juego hay que responder como mínimo 5 preguntas correctamente en este nivel.
+Cada pregunta respondida correctamente en el nivel 1 suma 5 puntos. 
+Cada pregunta respondida correctamente en el nivel 2 suma 10 puntos. 
+Cada pregunta respondida correctamente en el nivel 3 suma 20 puntos. 
+Al final de cada nivel se muestra el puntaje obtenido.
+Si el jugador logra terminar el nivel 3 sin errores, le aparecerá una pregunta extra para duplicar su puntaje.
+-->
+
+
+
+
+<!doctype html>
+<html>
+<head   lang="es">
+    	<!-- Santiago T. Fernandez Garcia - comison Noche-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <title>quiz</title>
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="img/logo-16.png" />
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+  
+          <a href="index.html" class="navbar-brand col-1"><img src="img/logo-2-5.png" alt="logo"  ></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#firstnavbars" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+       
+          <div class="collapse navbar-collapse" id="firstnavbars">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item "><a class="nav-link" href="dados.html">dados</a></li>
+              <li class="nav-item"><a class="nav-link" href="quiz.html">quiz</a></li>
+              <li class="nav-item"><a class="nav-link" href="doctor.html">doctors</a></li>
+              <li class="nav-item"><a class="nav-link" href="cumpas.html">companions</a></li>
+            </ul>        
+          </div>
+        </nav>
+      </header>
+      <main>
+        <div class="container">
+  
+    <h1>preguntas
+        
+        </h1>
+
+        <h3 id="preg"> </h3>
+        <h6 id="fin">la pregunta actual es la <span id="pa">1</span></h6>
+        <form name="datos" id="datos">
+            
+ 
+            <input type="button" name="inicio" id="inicio" value="inicio" onclick="iniciar();">
+           <br>
+           <p id="radiu" style="display: none;">
+            <input type="radio" id="verdad" name="user" value="1"  required>
+            <label for="verdad">si</label><br> 
+            <input type="radio" id="falso" name="user" value="0" required>
+            <label for="falso">no</label><br>
+        </p>
+            <input type="button" name="resp" id="resp" value="responder" disabled onclick="responder()" style="display: none;">
+
+
+            </form>
+            <p>tu puntaje es: <span id="pp">0</span></p>
+            <p>tus respuestas correctas son: <span id="rc">0</span></p>
+            <p>tus erros fueron: <span id="er">0</span></p>
+        </div></main>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

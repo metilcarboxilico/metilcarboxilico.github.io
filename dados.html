@@ -1,0 +1,108 @@
+
+
+
+<!--
+
+Juego: desafío de dados con un personaje
+
+Objetivo del juego
+Lograr 15 puntos exactos
+
+Funcionamiento del juego
+Se trata de un juego con dos jugadores. 
+Uno es el usuario y el otro es un personaje de la serie (o sea, la computadora que juega sola). 
+
+
+Cada jugador juega con 3 dados. 
+
+Cada jugador tiene asignado un número objetivo. 
+el número objetivo puede ser 4, 5 o 6. El número objetivo puede ser fijo, asignado al azar o tirando un dado.
+
+Cuando inicia su turno, el jugador tira los tres dados y suma 1 punto por cada dado que coincida con su número objetivo.
+ Por ejemplo, si el número objetivo es 5 y en la tirada de dados salen 2,4,5, entonces suma 1 punto. (un if para puntaje el puntaje es una variable local copiada del puntaje y a asignar si termina correctamente)
+
+También suma 1 punto si la suma de dos dados es igual al número objetivo. (if ab, bc ,ac)
+Por ejemplo, si el número objetivo es 5 y en la tirada de dados salen 2,3,5, entonces suma 2 puntos (1 punto por el 5 y 1 punto por la suma de 2+3).
+Otro ejemplo, si el número objetivo es 5 y en la tirada de dados salen 1,4,6, entonces suma 1 punto por la suma de 1+4.
+
+Si salen tres dados iguales, no importa cuales, suma 5 puntos. (if) en este caso se siguen sumando los 3 puntos si se coniciden es deci gana 8? --segu nel video gana el juego
+Si en la tirada consigue al menos 1 punto, el jugador puede seguir tirando manteniendo su turno. 
+Si en la tirada no consigue ningún punto, pasa el turno al siguiente jugador.  
+
+Si en un turno el jugador se pasa de los 15 puntos, no se suman los puntos de ese turno.    (esto se puede resolver con un if al final)
+Por ejemplo, el puntaje total del jugador cuando inicia el turno es 14 y en la tirada suma 2 puntos.
+En ese caso se pasaría, entonces esos 2 puntos no se suman, se termina el turno y el puntaje total sigue siendo 14. 
+Otro ejemplo, si al inicio del turno el puntaje del jugador es 10 y en la primera tirada suma 1 punto y en la segunda tirada suma 5 puntos (tres dados iguales), se pasa, entonces no suma nada, se termina el turno y el puntaje total sigue siendo 10. 
+Otro ejemplo, si al inicio del turno el puntaje del jugador es 12 y consigue sumar de a 1 punto durante tres tiradas, llega a 15 y gana la partida.
+
+
+-->
+
+
+<!doctype html>
+<html>
+<head   lang="es">
+      	<!-- Santiago T. Fernandez Garcia - comison Noche-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <title>dados</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+  <link rel="icon" type="image/png" href="img/logo-16.png" />
+</head>
+
+<body id="base">
+  
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark ">
+  
+          <a href="index.html" class="navbar-brand col-1"><img src="img/logo-2-5.png" alt="logo"  ></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#firstnavbars" >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+       
+          <div class="collapse navbar-collapse" id="firstnavbars">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item "><a class="nav-link" href="dados.html">dados</a></li>
+              <li class="nav-item"><a class="nav-link" href="quiz.html">quiz</a></li>
+              <li class="nav-item"><a class="nav-link" href="doctor.html">doctors</a></li>
+              <li class="nav-item"><a class="nav-link" href="cumpas.html">companions</a></li>
+            </ul>        
+          </div>
+        </nav>
+      </header>
+      <div class="container">
+    <h4> intrucciones de juego </h4>
+
+        <button id="deci" onclick="decidir();">decidir los numeros objetivo</button>
+        <button id="asig" onclick="asignar();">asignar aleatoriamente un numero objetivo</button>
+        <button id="turno" onclick="turno();">siguiente</button>
+        <button id="re" onclick="re();">volver a jugar?</button>
+        <div id="marcadores">
+        <p><span id="quien">empiezas</span></p><br>
+        <h6>las tirada fue </h6>
+        <p>dado 1 : <span id="t0">?</span> <br> dado 2 : <span id="t1">?</span> <br> dado 3 : <span id="t2">?</span></p>
+        <p>jugador: <br>objetivo: <span id="yo">a</span><br><span>puntaje: </span><span id="pp">0</span></p>
+        <br>
+        <p>rival:<br>objetivo: <span id="rival" >b</span><br><span>puntaje: </span><span id="rp">0</span></p>
+        </div>
+
+    </div>
+        
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/dados.js"></script>
+</body>
+
+</html>

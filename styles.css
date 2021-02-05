@@ -1,0 +1,16 @@
+
+
+    #marcadores,#turno,#re{
+        display: none;
+    }
+
+    body{
+        background-color: #094962;
+    }
+    .red{
+        color:red;
+      }
+
+      .jumbotron{
+    background-color: #fff1b1;
+      }
